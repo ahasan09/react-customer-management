@@ -1,0 +1,11 @@
+
+> react-app@0.1.0 test
+> react-scripts test --coverage --no-coverage-reporters
+
+● Unrecognized CLI Parameter:
+
+  Unrecognized option "coverage-reporters". Did you mean "coverageReporters"?
+
+  CLI Options Documentation:
+  https://jestjs.io/docs/en/cli.html
+
