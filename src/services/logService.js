@@ -1,27 +1,22 @@
-import * as Sentry from "@sentry/browser";
+// Sentry (@sentry/browser v4) was removed during the Vite/React 18 migration:
+// the SDK was several major versions out of date and shipped a hardcoded demo
+// DSN. Errors are logged to the console instead. To re-enable remote error
+// tracking, install a current @sentry/browser and call Sentry.init() here.
 
 function init() {
-  Sentry.init({
-    dsn: "https://49b1afe8e4544090b360f32556e67b8c@sentry.io/1405872",
-    environment: "development",
-    release: "1.0.0"
-  });
+  // no-op (previously Sentry.init)
 }
 
 function configure() {
-  Sentry.configureScope(scope => {
-    scope.setExtra("battery", 0.7);
-    scope.setTag("user_mode", "admin");
-    scope.setUser({ username: "abulhasanraju@gmail.com", id: "4711" });
-  });
+  // no-op (previously Sentry.configureScope)
 }
 
 function log(error) {
-  Sentry.captureException(error);
+  console.error(error);
 }
 
 export default {
   init,
   configure,
-  log
+  log,
 };

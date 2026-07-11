@@ -12,14 +12,17 @@ A React single-page application for managing customers. Features user authentica
 
 ## Tech Stack
 
-- React (Create React App)
-- JavaScript (ES6+)
+- React 18
+- Vite (build tool and dev server)
+- React Router v5
 - Axios (HTTP client)
-- React Router
+- Bootstrap 4
+- Vitest + React Testing Library (tests)
+- JavaScript (ES6+)
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) v14+
+- [Node.js](https://nodejs.org/) v20+
 - A running backend API (configure the base URL in `src/config.json`)
 
 ## Getting Started
@@ -36,14 +39,14 @@ Edit `src/config.json` to point to your backend:
 
 ```json
 {
-  "apiUrl": "http://localhost:3000/api"
+  "apiEndPoint": "https://jsonplaceholder.typicode.com/posts"
 }
 ```
 
 ### Start the app
 
 ```bash
-npm start
+npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
@@ -52,9 +55,10 @@ Open [http://localhost:3000](http://localhost:3000).
 
 | Command | Description |
 |---------|-------------|
-| `npm start` | Start dev server on port 3000 |
-| `npm test` | Run tests in interactive watch mode |
+| `npm run dev` | Start Vite dev server on port 3000 |
+| `npm test` | Run tests once with Vitest |
 | `npm run build` | Production build to `build/` |
+| `npm run preview` | Serve the production build locally |
 
 ## Project Structure
 
@@ -70,5 +74,7 @@ src/
 │   ├── navbar.jsx           # Navigation
 │   └── common/              # Shared UI components
 ├── services/                # Axios API calls
-└── utils/                   # Helpers and validation
+├── utils/                   # Helpers and validation
+├── App.jsx                  # Routes
+└── main.jsx                 # Entry point
 ```
